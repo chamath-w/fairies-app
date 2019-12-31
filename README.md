@@ -1,2 +1,2 @@
-# fairies-app
-watch the fairies follow you
+# bubbles-app
+Bubbles animation interactive

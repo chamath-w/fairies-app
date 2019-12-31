@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<encoding='UTF-8'>
+		<title>Bubbles World</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<style>
+			canvas {
+				border: 1px solid black;
+			}
+			body {
+				margin: 0;
+			}
+
+		</style>
+	</head>
+	<body>
+		<!--h1>Bubbles World</h1-->
+		<div class='component'>
+			<canvas id='drawingSurface'></canvas>
+		</div>
+		<div id="controls">
+			<a href="#" class="btn btn-primary" onClick="addManyParticles()" id="btnMakeItRain">Make it rain</a>
+			<a href="#" class="btn btn-primary" onClick="setPaused()" id="btnPause">Pause</a>
+			<a href="#" class="btn btn-primary" onClick="setFill()" id="btnFill">Paint</a>
+			<a href="#" class="btn btn-primary" onClick="setDrawWithMouse()" id="btnDrawWithMouse">On Click</a>
+			<div class="btn-group mr-2" role="group" aria-label="First group">
+				<button type="button" class="btn btn-secondary" onClick="makeCircleSmaller()">Smaller</button>
+				<button type="button" class="btn btn-secondary" onClick="makeCircleLarger()">Larger</button>
+			</div>
+		</div>
+		<div class="footer"><p>&copy By Chamath Wijeratne</p></div>
+		<script  src="http://code.jquery.com/jquery-3.4.1.min.js"  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		<script src='main.js'></script>
+	</body>
+</html>
