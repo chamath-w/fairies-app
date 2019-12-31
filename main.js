@@ -15,7 +15,7 @@ var maxRadius = 50;
 var minRadius = 2;
 
 var particlesArray = [];
-var noOfParticles = 20;
+var noOfParticles = 50;
 var minNoOfParticles = 20;
 var maxNoOfParticles = 400;
 var particlePathRadius = 150;
@@ -62,7 +62,7 @@ function Particle(x, y, velocity, radius, radians, pathOffset) {
 		c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
 		c.strokeStyle = this.color;
 		if (isFilled) {
-			c.fillStyle = this.color;
+			//c.fillStyle = this.color;
 			c.fill();
 		}
 		c.stroke();		
@@ -102,17 +102,17 @@ function Particle(x, y, velocity, radius, radians, pathOffset) {
 		
 		this.draw(lastPoint);
 		
-		this.draw = lastPoint => {
-			c.beginPath();
-			c.strokeStyle = this.color;
-			c.lineWidth = this.radius;
-			c.moveTo(lastPoint.x, lastPoint.y);
-			c.lineTo(this.x, this.y);
-			c.stroke();
+		this.draw = function(lastPoint) {
+				c.beginPath();
+				c.strokeStyle = this.color;
+				c.lineWidth = this.radius;
+				c.moveTo(lastPoint.x, lastPoint.y);
+				c.lineTo(this.x, this.y);
+				c.stroke();
 			c.closePath();
-			
+			}
 		};
-	}
+	
 }
 
 function addParticles(){
@@ -136,10 +136,13 @@ function init(){
 
 function animate(){
 // 	requestAnimationFrame(animate);
-	c.fillStyle = 'rgba(255, 255, 255, 0.03)';
+	c.fillStyle = '#FFFFFF0D';
 	c.fillRect(0, 0, canvas.width, canvas.height);
+	c.fill();
 	if (!isPaused){
-		particlesArray.forEach(particle => { particle.update()});
+		for (var i = 0; i < particlesArray.length; i++){
+			particlesArray[i].update();
+		}
 	}
 }
 
